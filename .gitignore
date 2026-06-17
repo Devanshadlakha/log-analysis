@@ -33,7 +33,6 @@ backend/target/
 
 # Claude Code session files (kept locally only)
 .claude/
-CLAUDE.md
 
 # OS
 .DS_Store
@@ -42,5 +41,6 @@ Thumbs.db
 # Elasticsearch data
 es-data/
 
-# Logs (test files)
+# Logs (runtime stdout + test files)
 *.log
+logs/
