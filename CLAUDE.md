@@ -22,17 +22,19 @@ Backend (Spring Boot :8080)
 
 ## Starting the System
 
-**Shortcut**: run each of these in its own PowerShell window from the repo root, in order:
+**Shortcut**: run each of these in its own PowerShell window from the repo root, in order. The leading `.\` is required — PowerShell will NOT run a script from the current directory without it.
 
 ```powershell
-scripts\start-infra.ps1        # Terminal 1: docker (Kafka, ZK, ES, Kibana, Mongo)
-scripts\start-backend.ps1      # Terminal 2: Spring Boot — builds JAR on first run
-scripts\start-ai.ps1           # Terminal 3: Python AI service
-scripts\start-frontend.ps1     # Terminal 4: Vite dev server
-scripts\start-collectors.ps1   # Terminal 5: log-collectors (required)
+.\scripts\start-infra.ps1        # Terminal 1: docker (Kafka, ZK, ES, Kibana, Mongo)
+.\scripts\start-backend.ps1      # Terminal 2: Spring Boot — builds JAR on first run
+.\scripts\start-ai.ps1           # Terminal 3: Python AI service
+.\scripts\start-frontend.ps1     # Terminal 4: Vite dev server
+.\scripts\start-collectors.ps1   # Terminal 5: log-collectors (required)
 ```
 
 Each script encapsulates the env-var loading, the `java -jar` workaround, and the venv handling. If you get a "running scripts is disabled" error, run once: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+
+If you're in **Git Bash** instead of PowerShell, use: `powershell -ExecutionPolicy Bypass -File scripts/start-infra.ps1` (and similarly for the others).
 
 ---
 
